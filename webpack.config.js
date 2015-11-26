@@ -19,9 +19,14 @@ module.exports = {
     ],
 
     module: {
+        preLoaders: [{
+            test: /\.jsx?$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'standard'
+        }],
         loaders: [{
             test: /\.jsx?$/,
-            exclude: /node_modules/,
+            exclude: /(node_modules|bower_components)/,
             loaders: ['babel-loader?presets[]=es2015&presets[]=react'],
             include: path.join(__dirname, '.')
         }]
