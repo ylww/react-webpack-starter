@@ -7,13 +7,17 @@ module.exports = {
         'webpack-dev-server/client?http://localhost:8080',
         './index.js'
     ],
+
     output: {
+        path: __dirname + '/dist',
         filename: 'bundle.js',
-        publicPath: '/static/'
+        publicPath: '/static/'  // Required for webpack-dev-server,对应的地址为/static/bundle.js
     },
+
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
+
     module: {
         loaders: [{
             test: /\.jsx?$/,
