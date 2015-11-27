@@ -1,7 +1,13 @@
 # react-webpack-starter
-react&amp;webpack template
 
-运行方式
+## 特性
+- webpack hot-load的支持
+- [standard](https://github.com/feross/standard) style的校验
+
+
+
+## 运行方式
+
 ```
 npm start
 ```
