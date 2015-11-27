@@ -20,7 +20,9 @@
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-0": "^6.1.18",
+    "css-loader": "^0.23.0",
     "open-browser-webpack-plugin": "0.0.1",
-    "standard-loader": "^2.0.0"
+    "standard-loader": "^2.0.0",
+    "style-loader": "^0.13.0"
   }
 }

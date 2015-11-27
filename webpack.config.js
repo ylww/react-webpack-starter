@@ -1,6 +1,6 @@
 var webpack = require ('webpack');
 var path = require ('path');
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var OpenBrowserPlugin = require ('open-browser-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -17,7 +17,7 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin (),
-    new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+    new OpenBrowserPlugin ({url: 'http://localhost:8080'})
   ],
 
   module: {
@@ -26,11 +26,14 @@ module.exports = {
       exclude: /(node_modules|bower_components)/,
       loader: 'standard'
     }],
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /(node_modules|bower_components)/,
-      loaders: ['babel-loader?presets[]=es2015&presets[]=react'],
-      include: path.join(__dirname, '.')
-    }]
+
+    loaders: [
+      {test: /\.css$/, loader: 'style-loader!css-loader'},
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loaders: ['babel-loader?presets[]=es2015&presets[]=react'],
+        include: path.join(__dirname, '.')
+      }]
   }
 };
